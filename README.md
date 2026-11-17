@@ -16,3 +16,6 @@ This is not Google's Quick Share protocol and does not include its nearby discov
 
 ## Android wrapper
 The `android/` project is a native WebView shell with Android `ACTION_SEND` / `ACTION_SEND_MULTIPLE` intent filters for text and files. It copies received shares into the app flow, exposes a QR scanner to pair with the PC, and can send the selected shared content through the WebRTC transfer. Outbound text can also use Android's native share chooser. A GitHub Actions workflow builds a debug APK artifact when triggered or when Android sources change. The APK has not yet been built or device-tested in this environment. Android receives shared file bytes in memory for the prototype, so very large shares may exhaust memory; production should stream files and enforce transfer-size limits. The external PeerJS/QR scripts are CDN dependencies and are not cached for offline transfers.
+
+## Preview download
+A debug APK was successfully built by GitHub Actions and published as [v0.1.0-preview](https://github.com/orokichi/quick-share-pwa/releases/tag/v0.1.0-preview). It is a development build, not a Play Store-ready or release-signed production APK. No physical Android/ChromeOS test has been performed.
